@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cafeteria Aconchego</title>
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+  <header>
+    <nav class="navegacao container" aria-label="Navegação principal">
+      <a class="logo" href="#home" aria-label="Cafeteria Aconchego - voltar ao início">☕ <span>Cafeteria Aconchego</span></a>
+
+      <!-- checkbox hamburger - acessível -->
+      <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-hidden="true">
+      <label for="menu-toggle" class="menu-icon" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </label>
+
+      <ul class="menu" id="menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#cardapio">Cardápio</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="banner" class="banner" role="img" aria-label="Imagem de café no banner">
+      <div class="banner-texto container">
+        <h1>O sabor que abraça</h1>
+        <p>Venha saborear o melhor café da cidade em um ambiente acolhedor.</p>
+      </div>
+    </section>
+
+    <section id="cardapio" class="container cardapio">
+      <h2>Nosso Cardápio</h2>
+      <div class="grid-produtos" role="list">
+        <article class="produto" role="listitem">
+          <img src="images/coffee1.jpg" alt="Café Expresso">
+          <h3>Café Expresso</h3>
+          <p>O clássico, forte e encorpado.</p>
+          <div class="preco">R$ 6,00</div>
+        </article>
+        <article class="produto" role="listitem">
+          <img src="images/coffee2.jpg" alt="Cappuccino">
+          <h3>Cappuccino</h3>
+          <p>Uma mistura cremosa de café e leite.</p>
+          <div class="preco">R$ 10,00</div>
+        </article>
+        <article class="produto" role="listitem">
+          <img src="images/coffee3.jpg" alt="Mocha">
+          <h3>Mocha</h3>
+          <p>Chocolate, café e leite vaporizado.</p>
+          <div class="preco">R$ 12,00</div>
+        </article>
+        <article class="produto" role="listitem">
+          <img src="images/coffee4.jpg" alt="Latte">
+          <h3>Latte</h3>
+          <p>Suave e saboroso, perfeito para relaxar.</p>
+          <div class="preco">R$ 9,00</div>
+        </article>
+        <article class="produto" role="listitem">
+          <img src="images/coffee5.jpg" alt="Bolo de Cenoura">
+          <h3>Bolo de Cenoura</h3>
+          <p>Com cobertura de chocolate artesanal.</p>
+          <div class="preco">R$ 8,00</div>
+        </article>
+        <article class="produto" role="listitem">
+          <img src="images/coffee6.jpg" alt="Croissant">
+          <h3>Croissant</h3>
+          <p>Folhado e amanteigado, ideal para o café da manhã.</p>
+          <div class="preco">R$ 7,00</div>
+        </article>
+      </div>
+    </section>
+
+  <section id="sobre">
+  <div class="banner-sobre">
+    <div class="banner-texto">
+      <h1>Mais que café, uma experiência</h1>
+      <p>Conheça a história e o aroma que tornam a Cafeteria Aconchego única.</p>
+    </div>
+  </div>
+
+  <div class="container sobre-conteudo">
+    <h2>Sobre Nós</h2>
+    <p>A Cafeteria Aconchego nasceu do sonho de criar um refúgio na cidade. Cada detalhe, das poltronas à lareira, foi pensado para oferecer a sensação de um lar.
+      Não somos apenas uma cafeteria, mas um ponto de encontro onde o tempo desacelera. Aqui, o aroma do café se mistura a risadas e novas ideias, transformando a rotina. Venha saborear a vida, um gole de cada vez, e encontre seu momento de paz.</p>
+  </div>
+</section>
+
+  </main>
+
+  <footer id="contato">
+    <div class="container footer-inner">
+      <div class="contato">
+        <h3>Contato</h3>
+        <p><strong>Endereço:</strong> Rua das Flores, 123 - Centro</p>
+        <p><strong>Horário:</strong> Seg a Sáb - 8h às 20h</p>
+      </div>
+      <div class="redes">
+        <h3>Siga-nos</h3>
+        <p><a href="#" aria-label="Instagram">Instagram</a> · <a href="#" aria-label="Facebook">Facebook</a> · <a href="#" aria-label="WhatsApp">WhatsApp</a></p>
+      </div>
+    </div>
+    <div class="container copyright">
+      <p>&copy; 2024 Cafeteria Aconchego. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

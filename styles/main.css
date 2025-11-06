@@ -1,0 +1,279 @@
+:root{
+  --primary-brown:#8B4513;
+  --accent-gold:#FFD700;
+  --cream:#FFF8DC;
+  --text-dark:#333333;
+  --text-light:#FFFFFF;
+  --max-content-width:1200px;
+}
+
+/* Base - mobile */
+*{box-sizing:border-box}
+html{font-size:16px} /* base for rem */
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:var(--cream);
+  color:var(--text-dark);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.4;
+}
+
+/* Container padding per spec */
+.container{padding:1rem}
+
+/* Header */
+header{background:var(--primary-brown); color:var(--accent-gold)}
+.navegacao{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:1rem;
+  flex-wrap:wrap;
+}
+.logo{display:flex;align-items:center;color:var(--accent-gold);text-decoration:none;font-weight:700;font-size:1rem}
+.logo span{margin-left:.5rem}
+.menu{list-style:none;margin:0;padding:0;display:flex;gap:1rem;align-items:center}
+.menu li a{color:var(--text-light);text-decoration:none;padding:.5rem 0;display:inline-block;font-weight:600}
+.menu li a:focus, .menu li a:hover{color:var(--accent-gold)}
+
+/* Hamburger */
+.menu-toggle{display:none}
+.menu-icon{display:none;cursor:pointer;width:32px;height:28px;position:relative}
+.menu-icon span{display:block;height:3px;background:var(--text-light);margin:6px 0;border-radius:2px;transition:all .25s ease}
+
+/* Banner */
+.banner{
+  background-image:url('images/banner.jpg');
+  background-position:center center;
+  background-size:cover;
+  background-repeat:no-repeat;
+  color:var(--text-light);
+  text-align:center;
+  padding:5rem 1rem;
+}
+.banner-texto h1{font-size:2rem;margin:0 0 .5rem;color:var(--accent-gold)}
+.banner-texto p{font-size:1rem;margin:0;color:var(--text-light)}
+
+/* Cardápio grid */
+.cardapio h2{text-align:center;color:var(--primary-brown);font-size:1.25rem;margin-top:0}
+.grid-produtos{display:flex;flex-wrap:wrap;gap:1rem;justify-content:center}
+.produto{
+  background:var(--text-light);
+  border-radius:8px;
+  overflow:hidden;
+  box-shadow:0 2px 6px rgba(0,0,0,.08);
+  flex:1 1 300px;
+  max-width:350px;
+  text-align:center;
+  display:flex;
+  flex-direction:column;
+}
+.produto img{width:100%;height:200px;object-fit:cover;display:block}
+.produto h3{margin:1rem .75rem 0;font-size:1.125rem;color:var(--primary-brown)}
+.produto p{margin:.5rem .75rem 1rem;font-size:1rem;flex:1;color:var(--text-dark)}
+.preco{margin:.75rem;color:var(--accent-gold);font-weight:700;font-size:1rem;padding:.5rem .75rem}
+
+/* Sobre */
+.sobre{background:transparent;padding:2rem 1rem;text-align:center}
+.sobre h2{font-size:1.25rem;color:var(--primary-brown)}
+.sobre p{max-width:900px;margin:0.5rem auto}
+
+/* Footer */
+footer{background:var(--primary-brown);color:var(--text-light);padding:1rem 0;margin-top:2rem;text-align:center}
+.footer-inner{display:flex;flex-direction:column;gap:1rem}
+.footer-inner h3{margin:.25rem 0}
+.footer-inner a{color:var(--text-light);text-decoration:none}
+.footer-inner a:hover{color:var(--accent-gold)}
+
+/* Acessibilidade */
+.menu li a{min-height:44px;display:flex;align-items:center;padding:0 .5rem}
+
+/* Hover effects */
+.produto:hover{transform:translateY(-4px);transition:transform .2s ease}
+.produto img{transition:transform .25s ease}
+.produto:hover img{transform:scale(1.03)}
+
+/* Media Queries */
+/* Tablet (481px+) */
+@media (min-width:481px){
+  .container{padding:2rem}
+  .banner{padding:4rem 2rem}
+  .banner-texto h1{font-size:2.5rem}
+  .banner-texto p{font-size:1.1rem}
+  .footer-inner{flex-direction:row;justify-content:space-between;align-items:flex-start}
+}
+
+/* Desktop (769px+) */
+@media (min-width:769px){
+  html{font-size:18px} /* scale typography: h1/h2 sizes will scale */
+  .container{max-width:var(--max-content-width);margin:0 auto}
+  .navegacao{align-items:center}
+  .menu{display:flex}
+  .menu-icon{display:none}
+  .menu-toggle{display:none}
+  .banner{padding:6rem 1rem}
+  .banner-texto h1{font-size:3rem}
+  .banner-texto p{font-size:1.125rem}
+  /* Grid: 3-4 columns visually */
+  .grid-produtos{justify-content:flex-start}
+  .produto{flex:1 1 300px}
+}
+
+/* Mobile (max-width:480px) - menu columnar/hamburger */
+@media (max-width:480px){
+  .menu{display:flex;flex-direction:column;width:100%;gap:0;overflow:hidden;max-height:0;transition:max-height .25s ease}
+  .menu li{width:100%;text-align:center;border-top:1px solid rgba(0,0,0,0.03)}
+  .menu-icon{display:block}
+  /* when checked, show menu */
+  .menu-toggle:checked + .menu-icon + .menu{max-height:500px;padding:.5rem 0}
+  .banner{padding:3rem 1rem;background-position:center 30%}
+  .banner-texto h1{font-size:1.75rem}
+  .banner-texto p{font-size:1rem}
+  /* Ensure touch targets */
+  .produto img{height:180px}
+}
+
+/* Garante que imagens responsivas não excedam o container*/
+img{max-width:100%;height:auto;display:block}
+
+
+/* ===== Banner Responsivo com Overlay ===== */
+.banner {
+  position: relative;
+  background: url('../images/banner-desktop.jpg') center/cover no-repeat;
+  color: var(--text-light);
+  text-align: center;
+  padding: 5rem 1rem;
+}
+
+.banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(139, 69, 19, 0.45), rgba(0, 0, 0, 0.4));
+  z-index: 0;
+}
+
+.banner-texto {
+  position: relative;
+  z-index: 1;
+}
+
+.banner-texto h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: var(--accent-gold);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.banner-texto p {
+  font-size: 1.1rem;
+  color: var(--text-light);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .banner {
+    background-image: url('../images/banner-tablet.jpg');
+    padding: 4rem 1rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .banner {
+    background-image: url('../images/banner-mobile.jpg');
+    padding: 3rem 1rem;
+  }
+
+  .banner-texto h1 {
+    font-size: 1.75rem;
+  }
+
+  .banner-texto p {
+    font-size: 1rem;
+  }
+}
+/* ===== Banner da seção SOBRE ===== */
+.banner-sobre {
+  position: relative;
+  width: 100vw;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  background: url('../images/banner-sobre-desktop.jpg') center/cover no-repeat;
+  color: var(--text-light);
+  text-align: center;
+  padding: 5rem 1rem;
+}
+
+.banner-sobre::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(139, 69, 19, 0.45), rgba(0, 0, 0, 0.4));
+  z-index: 0;
+}
+
+.banner-sobre .banner-texto {
+  position: relative;
+  z-index: 1;
+}
+
+.banner-sobre .banner-texto h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: var(--accent-gold);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.banner-sobre .banner-texto p {
+  font-size: 1.1rem;
+  color: var(--text-light);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .banner-sobre {
+    background-image: url('../images/banner-sobre-tablet.jpg');
+    padding: 4rem 1rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .banner-sobre {
+    background-image: url('../images/banner-sobre-mobile.jpg');
+    padding: 3rem 1rem;
+  }
+
+  .banner-sobre .banner-texto h1 {
+    font-size: 1.75rem;
+  }
+
+  .banner-sobre .banner-texto p {
+    font-size: 1rem;
+  }
+}
+.sobre-conteudo {
+  text-align: center;
+  max-width: 800px;
+  margin: 3rem auto;
+  line-height: 1.6;
+}
+
+.sobre-conteudo h2 {
+  color: var(--primary-brown);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.sobre-conteudo p {
+  font-size: 1.1rem;
+  color: var(--text-dark);
+}
